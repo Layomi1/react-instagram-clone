@@ -1,8 +1,8 @@
-import { Sidebar } from "../sidebar/sidebar";
 import { useLocation } from "react-router-dom";
 import { Box, Flex } from "@chakra-ui/react";
+import { Sidebar } from "../../components";
 
-const PageLayout = ({ children }) => {
+export const PageLayout = ({ children }) => {
   const { pathname } = useLocation();
 
   return (
@@ -13,10 +13,9 @@ const PageLayout = ({ children }) => {
         </Box>
       ) : null}
 
-      <Box Flex={1} w={{ base: "calc(100% -70px)", md: "calc(100%-240px)" }}>
+      <Box flex={1} w={{ base: "calc(100% -70px)", md: "calc(100%-240px)" }}>
         {children}
       </Box>
     </Flex>
   );
 };
-export default PageLayout;
