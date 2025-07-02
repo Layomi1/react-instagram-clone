@@ -8,30 +8,69 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const AuthForm = () => {
   const [isLoggedIn, setIsLoggedIn] = useState();
+  const [inputs, setInputs] = useState({
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
+  const navigate = useNavigate();
+
+  const handleAuth = (e) => {
+    e.preventDefault();
+
+    if (!inputs.email || !inputs.password) {
+      alert("Please fill input field");
+      return;
+    }
+    navigate("/");
+  };
   return (
     <>
       <Box border={"1px solid gray"} borderRadius={4} padding={5}>
         <VStack spacing={4}>
           <Image src="/logo.png" alt="instagram" />
-          <Input type="Email" placeholder="Enail" fontSize={14} />
           <Input
-            type="Password"
+            type="email"
+            name="email"
+            value={inputs.email}
+            onChange={(e) => setInputs({ ...inputs, email: e.target.value })}
+            placeholder="Enail"
+            fontSize={14}
+          />
+
+          <Input
+            type="password"
+            name="password"
+            value={inputs.password}
+            onChange={(e) => setInputs({ ...inputs, password: e.target.value })}
             placeholder="Password"
             fontSize={14}
             padding={4}
           />
           {isLoggedIn ? (
             <Input
-              type="Password"
+              type="password"
+              name="confirmPassword"
+              value={cinputs.onfirmPassword}
+              onChange={(e) =>
+                setInputs({ ...inputs, confirmPassword: e.target.value })
+              }
               placeholder="Confirm Password"
               fontSize={14}
             />
           ) : null}
 
-          <Button w={"full"} bg={"gray.400"} size={"sm"} fontSize={14}>
+          <Button
+            onClick={handleAuth}
+            w={"full"}
+            bg={"gray.400"}
+            size={"sm"}
+            fontSize={14}
+          >
             {isLoggedIn ? "Log In" : "Sign Up"}
           </Button>
 
@@ -67,7 +106,7 @@ export const AuthForm = () => {
         borderRadius={4}
         padding={5}
       >
-        <Box>
+        <Box fontSize={14}>
           {isLoggedIn ? "Don't have an account? " : "Already have an Account?"}
         </Box>
         <Box

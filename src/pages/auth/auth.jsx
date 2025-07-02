@@ -25,6 +25,7 @@ export const AuthPage = () => {
             </Box>
             <VStack spacing={4} align={"stretch"}>
               <AuthForm />
+              <Box textAlign={"center"}>Get App</Box>
 
               <Flex gap={5} justifyContent={"center"}>
                 <Image src="./playstore.png" h={10} alt="play store logo" />
