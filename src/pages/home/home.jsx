@@ -1,5 +1,22 @@
-import React from "react";
+import { Box, Container, Flex } from "@chakra-ui/react";
+import { FeedPosts } from "../../components";
 
 export const Home = () => {
-  return <div>Home</div>;
+  return (
+    <Container maxW={"container.md"}>
+      <Flex gap={20}>
+        <Box flex={2} py={10}>
+          <FeedPosts />
+        </Box>
+        <Box
+          flex={3}
+          pr={20}
+          display={{ base: "none", md: "block" }}
+          width={"300px"}
+        >
+          Suggested Users
+        </Box>
+      </Flex>
+    </Container>
+  );
 };

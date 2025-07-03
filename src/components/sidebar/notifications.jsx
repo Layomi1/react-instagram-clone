@@ -18,7 +18,7 @@ export const Notifications = () => {
         alignItems={"center"}
         as={RouterLink}
         gap={4}
-        _hover={{ bg: "whiteAplha.400" }}
+        _hover={{ bg: "whiteAlpha.400" }}
         borderRadius={6}
         w={{ base: 10, md: "full" }}
         p={2}

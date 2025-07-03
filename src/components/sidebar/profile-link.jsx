@@ -17,12 +17,12 @@ export const ProfileLink = () => {
         alignItems={"center"}
         as={RouterLink}
         gap={4}
-        _hover={{ bg: "whiteAplha.400" }}
+        _hover={{ bg: "whiteAlpha.400" }}
         borderRadius={6}
         w={{ base: 10, md: "full" }}
         p={2}
       >
-        <Avatar size={"xs"} />
+        <Avatar size={"xs"} src="../profilepic.png" name="Brad Pitt" />
         <Box display={{ base: "none", md: "block" }}>Profile</Box>
       </Link>
     </Tooltip>
