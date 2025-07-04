@@ -10,6 +10,9 @@ import { FeedPosts } from "./feed-posts/feed-posts";
 import { FeedPostItem } from "./feed-posts/feed-post-item";
 import { PostFooter } from "./feed-posts/post-footer";
 import { PostHeader } from "./feed-posts/post-header";
+import { SuggestedUsers } from "./suggested-users/suggested-users";
+import { SuggestedHeader } from "./suggested-users/suggested-header";
+import { SuggestedUser } from "./suggested-users/suggested-User";
 
 export {
   AuthForm,
@@ -24,4 +27,7 @@ export {
   Search,
   Sidebar,
   SidebarItems,
+  SuggestedHeader,
+  SuggestedUser,
+  SuggestedUsers,
 };

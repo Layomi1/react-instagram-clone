@@ -14,9 +14,9 @@ import {
   CommentLogo,
 } from "../../assets/constants";
 
-export const PostFooter = () => {
+export const PostFooter = ({ username, thought }) => {
   const [likes, setLikes] = useState(false);
-  const [likeCount, setLikeCount] = useState(1000);
+  const [likeCount, setLikeCount] = useState(0);
 
   const handleLikes = () => {
     if (likes) {
@@ -31,10 +31,10 @@ export const PostFooter = () => {
   const handleComments = () => {};
 
   return (
-    <Box my={10}>
+    <Box mt={4} mb={10}>
       <Flex pt={0} gap={4} alignItems={"center"} w={"full"} mb={2} mt={4}>
         <Box onClick={handleLikes} cursor={"pointer"} fontSize={18}>
-          {likes ? <NotificationsLogo /> : <UnlikeLogo />}
+          {likes ? <UnlikeLogo /> : <NotificationsLogo />}
         </Box>
         <Box onClick={handleComments} cursor={"pointer"} fontSize={18}>
           <CommentLogo />
@@ -44,9 +44,9 @@ export const PostFooter = () => {
         {likeCount} likes
       </Flex>
       <Text fontWeight={600} fontSize={"sm"} mr={4}>
-        programmer_
+        {username}_
         <Text fontWeight={600} fontSize={"sm"} color={"gray"}>
-          Feeling good
+          {thought}
         </Text>
         <Text fontWeight={600} fontSize={"sm"} color={"gray"}>
           No of comments
@@ -58,19 +58,23 @@ export const PostFooter = () => {
         gap={2}
         w={"full"}
       >
-        <InputGroup>
-          <Input placeholder="Enter comment" variant={"flushed"} />
-          <InputRightElement>
-            <Button
-              fontSize={14}
-              color={"blue.500"}
-              fontWeight={600}
-              cursor={"pointer"}
-              _hover={{ color: "white" }}
-              bg="transparent"
-            ></Button>{" "}
-          </InputRightElement>
-        </InputGroup>
+        <Flex justifyContent={"space-between"} alignItems={"center"} w={"full"}>
+          <InputGroup>
+            <Input placeholder="Add a comment" variant={"flushed"} />
+            <InputRightElement>
+              <Button
+                fontSize={14}
+                color={"blue.500"}
+                fontWeight={600}
+                cursor={"pointer"}
+                _hover={{ color: "white" }}
+                bg="transparent"
+              >
+                Post
+              </Button>
+            </InputRightElement>
+          </InputGroup>
+        </Flex>
       </Flex>
     </Box>
   );

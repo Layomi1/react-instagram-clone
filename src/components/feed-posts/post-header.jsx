@@ -1,7 +1,7 @@
 import { Flex, Box, Avatar, Button } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
-export const PostHeader = () => {
+export const PostHeader = ({ avatar, username }) => {
   return (
     <Flex
       justifyContent={"space-between"}
@@ -11,11 +11,11 @@ export const PostHeader = () => {
     >
       <Flex alignItems={"center"} gap={2}>
         <Link to="">
-          <Avatar src="./img1.png" alignItems={"center"} size="xs" />
+          <Avatar src={avatar} alignItems={"center"} size="xs" />
         </Link>
 
         <Flex fontSize={10} fontWeight={"bold"} gap={2} alignItems={"center"}>
-          <Link to="">Programmer</Link>
+          <Link to="">{username}</Link>
           <Box color={"gray.500"}>*1wk</Box>
         </Flex>
       </Flex>
@@ -27,6 +27,7 @@ export const PostHeader = () => {
           _hover={{ color: "white" }}
           transition={"0.2s ease-in=out"}
           bg="transparent"
+          pr={0}
         >
           Follow
         </Button>
