@@ -12,7 +12,11 @@ import { PostFooter } from "./feed-posts/post-footer";
 import { PostHeader } from "./feed-posts/post-header";
 import { SuggestedUsers } from "./suggested-users/suggested-users";
 import { SuggestedHeader } from "./suggested-users/suggested-header";
-import { SuggestedUser } from "./suggested-users/suggested-User";
+import { SuggestedUser } from "./suggested-users/suggested-user";
+
+import { ProfileHeader } from "./profile/profile-header";
+import { ProfileTabs } from "./profile/profile-tabs";
+import { ProfilePosts } from "./profile/profile-posts";
 
 export {
   AuthForm,
@@ -24,6 +28,9 @@ export {
   PostHeader,
   PostFooter,
   ProfileLink,
+  ProfileHeader,
+  ProfilePosts,
+  ProfileTabs,
   Search,
   Sidebar,
   SidebarItems,

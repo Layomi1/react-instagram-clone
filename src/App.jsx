@@ -10,7 +10,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/auth" element={<AuthPage />} />
 
-        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/username" element={<ProfilePage />} />
       </Routes>
     </PageLayout>
   );
