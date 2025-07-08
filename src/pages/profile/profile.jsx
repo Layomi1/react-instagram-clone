@@ -1,6 +1,6 @@
-import { Box, Container, Image, Text, Flex, Button } from "@chakra-ui/react";
+import { Container, Flex } from "@chakra-ui/react";
 
-import { ProfileHeader, ProfilePosts, ProfileTabs } from "../../components";
+import { ProfileHeader, ProfileTabs } from "../../components";
 
 export const ProfilePage = () => {
   return (
@@ -24,7 +24,7 @@ export const ProfilePage = () => {
         borderColor={"whiteAlpha.300"}
       >
         <ProfileTabs />
-        <ProfilePosts />
+        {/* <ProfilePosts /> */}
       </Flex>
     </Container>
   );
