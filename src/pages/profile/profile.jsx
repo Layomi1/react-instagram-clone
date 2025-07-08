@@ -24,7 +24,6 @@ export const ProfilePage = () => {
         borderColor={"whiteAlpha.300"}
       >
         <ProfileTabs />
-        {/* <ProfilePosts /> */}
       </Flex>
     </Container>
   );
