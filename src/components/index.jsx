@@ -17,7 +17,7 @@ import { SuggestedUser } from "./suggested-users/suggested-user";
 import { ProfileHeader } from "./profile/profile-header";
 import { ProfileTabs } from "./profile/profile-tabs";
 import { ProfilePosts } from "./profile/profile-posts";
-
+import { ProfilePostItem } from "./profile/profile-post-item";
 export {
   AuthForm,
   CreatePost,
@@ -30,6 +30,7 @@ export {
   ProfileLink,
   ProfileHeader,
   ProfilePosts,
+  ProfilePostItem,
   ProfileTabs,
   Search,
   Sidebar,

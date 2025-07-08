@@ -12,7 +12,7 @@ export const ProfileLink = () => {
       display={{ base: "block", md: "none" }}
     >
       <Link
-        to={"/profile"}
+        to={"/username"}
         display={"flex"}
         alignItems={"center"}
         as={RouterLink}
