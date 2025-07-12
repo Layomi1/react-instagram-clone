@@ -18,8 +18,11 @@ import { ProfileHeader } from "./profile/profile-header";
 import { ProfileTabs } from "./profile/profile-tabs";
 import { ProfilePosts } from "./profile/profile-posts";
 import { ProfilePostItem } from "./profile/profile-post-item";
+import { Comment } from "./comment/comment";
+
 export {
   AuthForm,
+  Comment,
   CreatePost,
   FeedPosts,
   FeedPostItem,

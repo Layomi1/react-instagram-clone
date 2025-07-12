@@ -2,7 +2,6 @@ import {
   Avatar,
   Box,
   Button,
-  Divider,
   Flex,
   GridItem,
   Text,
@@ -13,16 +12,16 @@ import {
   ModalCloseButton,
   ModalContent,
   useDisclosure,
+  VStack,
 } from "@chakra-ui/react";
 import { AiFillHeart } from "react-icons/ai";
 import { FaComment } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
+import { Comment } from "../comment/comment";
 
 export const ProfilePostItem = ({ img }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  // const initialRef = React.useRef(null);
-  // const finalRef = React.useRef(null);
   return (
     <>
       <GridItem
@@ -74,32 +73,28 @@ export const ProfilePostItem = ({ img }) => {
       </GridItem>
       <Modal isOpen={isOpen} onClose={onClose} isCentered>
         <ModalOverlay size={{ base: "3xl", md: "5xl" }} />
-        <ModalContent>
+        <ModalContent width="full" minW={{ md: "600px" }}>
           <ModalCloseButton />
-          <ModalBody bg={"black"} pb={5}>
+          <ModalBody bg={"black"} pb={5} width={"full"} minW={{ md: "600px" }}>
             <Flex
               gap={4}
               w={{ base: "90%", sm: "70%", md: "full" }}
               mx={"auto"}
+              maxH={"50%"}
+              minH={"50%"}
               p={5}
             >
-              <Box
+              <Flex
                 borderRadius={4}
                 overflow={"hidden"}
                 border={"1px solid"}
                 borderColor={"whiteAlpha.300"}
                 flex={1.5}
-
-                // justifyContent={"center"}
-                // alignContent={"center"}
+                justifyContent={"center"}
+                alignContent={"center"}
               >
-                <Image
-                  src={img}
-                  w={"100%"}
-                  objectFit={"cover"}
-                  alt="profile post"
-                />
-              </Box>
+                <Image src={img} alt="profile post" />
+              </Flex>
 
               <Flex
                 flex={1}
@@ -108,10 +103,15 @@ export const ProfilePostItem = ({ img }) => {
                 display={{ base: "none", md: "block" }}
                 alignItems={"center"}
                 justifyContent={"space-between"}
-
-                // alignItems={"center"}
               >
-                <Flex alignItems={"center"} justifyContent={"space-between"}>
+                <Flex
+                  alignItems={"center"}
+                  justifyContent={"space-between"}
+                  borderBottom={"1px"}
+                  pb={2}
+                  borderColor="gray.500"
+                  mb={4}
+                >
                   <Flex alignItems={"center"}>
                     <Box mr={1}>
                       <Avatar
@@ -136,8 +136,32 @@ export const ProfilePostItem = ({ img }) => {
                     <MdDelete size={20} />
                   </Button>
                 </Flex>
-                <Divider />
-                <Flex></Flex>
+
+                <VStack
+                  w={"full"}
+                  alignItems={"start"}
+                  maxH={"350px"}
+                  overflowY={"auto"}
+                >
+                  <Comment
+                    createdAt="1d ago"
+                    username="asaprogrammer_"
+                    profilePic="/profilepic1.png"
+                    text="Dummy images from Unsplash"
+                  />
+                  <Comment
+                    createdAt="1d ago"
+                    username="asaprogrammer_"
+                    profilePic="/profilepic1.png"
+                    text="Dummy images from Unsplash"
+                  />
+                  <Comment
+                    createdAt="1d ago"
+                    username="asaprogrammer_"
+                    profilePic="/profilepic1.png"
+                    text="Dummy images from Unsplash"
+                  />
+                </VStack>
               </Flex>
             </Flex>
           </ModalBody>
