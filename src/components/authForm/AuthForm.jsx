@@ -10,7 +10,7 @@ import {
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export const AuthForm = () => {
+const AuthForm = () => {
   const [isLoggedIn, setIsLoggedIn] = useState();
   const [inputs, setInputs] = useState({
     email: "",
@@ -121,3 +121,4 @@ export const AuthForm = () => {
     </>
   );
 };
+export default AuthForm;

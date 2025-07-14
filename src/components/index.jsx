@@ -1,4 +1,4 @@
-import { AuthForm } from "./authForm/authForm";
+import AuthForm from "./authForm/authForm";
 import { Sidebar } from "./sidebar/sidebar";
 import { ProfileLink } from "./sidebar/profile-link";
 import { Notifications } from "./sidebar/notifications";
