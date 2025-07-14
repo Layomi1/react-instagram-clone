@@ -14,7 +14,7 @@ import {
   CommentLogo,
 } from "../../assets/constants";
 
-export const PostFooter = ({ username, thought }) => {
+export const PostFooter = ({ username, isProfilePage }) => {
   const [likes, setLikes] = useState(false);
   const [likeCount, setLikeCount] = useState(0);
 
@@ -31,7 +31,7 @@ export const PostFooter = ({ username, thought }) => {
   const handleComments = () => {};
 
   return (
-    <Box mt={4} mb={10}>
+    <Box marginTop={"auto"} alignItems={"start"}>
       <Flex pt={0} gap={4} alignItems={"center"} w={"full"} mb={2} mt={4}>
         <Box onClick={handleLikes} cursor={"pointer"} fontSize={18}>
           {likes ? <UnlikeLogo /> : <NotificationsLogo />}
@@ -43,15 +43,17 @@ export const PostFooter = ({ username, thought }) => {
       <Flex fontWeight={600} fontSize={"sm"}>
         {likeCount} likes
       </Flex>
-      <Text fontWeight={600} fontSize={"sm"} mr={4}>
-        {username}_
-        <Text fontWeight={600} fontSize={"sm"} color={"gray"}>
-          {thought}
+      {isProfilePage ? (
+        <Text fontWeight={600} fontSize={"sm"} mr={4}>
+          {username}_
+          <Text fontWeight={600} fontSize={"sm"} color={"gray"}>
+            Feeling good!
+          </Text>
+          <Text fontWeight={600} fontSize={"sm"} color={"gray"}>
+            No of comments
+          </Text>
         </Text>
-        <Text fontWeight={600} fontSize={"sm"} color={"gray"}>
-          No of comments
-        </Text>
-      </Text>
+      ) : null}
       <Flex
         alignItems={"center"}
         justifyContent={"space-between"}

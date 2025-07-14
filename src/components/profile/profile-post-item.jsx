@@ -18,6 +18,7 @@ import { AiFillHeart } from "react-icons/ai";
 import { FaComment } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import { Comment } from "../comment/comment";
+import { PostFooter } from "../feed-posts/post-footer";
 
 export const ProfilePostItem = ({ img }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -73,9 +74,9 @@ export const ProfilePostItem = ({ img }) => {
       </GridItem>
       <Modal isOpen={isOpen} onClose={onClose} isCentered>
         <ModalOverlay size={{ base: "3xl", md: "5xl" }} />
-        <ModalContent width="full" minW={{ md: "600px" }}>
+        <ModalContent width="full" minW={{ md: "900px" }}>
           <ModalCloseButton />
-          <ModalBody bg={"black"} pb={5} width={"full"} minW={{ md: "600px" }}>
+          <ModalBody bg={"black"} pb={5} width={"full"} minW={{ md: "900px" }}>
             <Flex
               gap={4}
               w={{ base: "90%", sm: "70%", md: "full" }}
@@ -83,6 +84,7 @@ export const ProfilePostItem = ({ img }) => {
               maxH={"50%"}
               minH={"50%"}
               p={5}
+              justifyContent={"space-between"}
             >
               <Flex
                 borderRadius={4}
@@ -100,23 +102,24 @@ export const ProfilePostItem = ({ img }) => {
                 flex={1}
                 pt={2}
                 pr={0}
-                display={{ base: "none", md: "block" }}
-                alignItems={"center"}
+                display={{ base: "none", md: "flex" }}
+                style={{
+                  flexDirection: "column",
+                }}
+                alignItems={"start"}
                 justifyContent={"space-between"}
               >
                 <Flex
                   alignItems={"center"}
                   justifyContent={"space-between"}
-                  borderBottom={"1px"}
                   pb={2}
-                  borderColor="gray.500"
-                  mb={4}
+                  w={"full"}
                 >
                   <Flex alignItems={"center"}>
-                    <Box mr={1}>
+                    <Box mr={2}>
                       <Avatar
                         src="./profilepic1.png"
-                        size={"xs"}
+                        size={"sm"}
                         name="As a programmer"
                       />
                     </Box>
@@ -142,6 +145,9 @@ export const ProfilePostItem = ({ img }) => {
                   alignItems={"start"}
                   maxH={"350px"}
                   overflowY={"auto"}
+                  borderColor={"gray"}
+                  borderY={"1px"}
+                  py={4}
                 >
                   <Comment
                     createdAt="1d ago"
@@ -153,15 +159,77 @@ export const ProfilePostItem = ({ img }) => {
                     createdAt="1d ago"
                     username="asaprogrammer_"
                     profilePic="/profilepic1.png"
-                    text="Dummy images from Unsplash"
+                    text="Good job"
                   />
                   <Comment
                     createdAt="1d ago"
                     username="asaprogrammer_"
                     profilePic="/profilepic1.png"
-                    text="Dummy images from Unsplash"
+                    text="Nice project"
+                  />
+                  <Comment
+                    createdAt="1d ago"
+                    username="asaprogrammer_"
+                    profilePic="/profilepic1.png"
+                    text="Nice project"
+                  />
+                  <Comment
+                    createdAt="1d ago"
+                    username="asaprogrammer_"
+                    profilePic="/profilepic1.png"
+                    text="Nice project"
+                  />
+                  <Comment
+                    createdAt="1d ago"
+                    username="asaprogrammer_"
+                    profilePic="/profilepic1.png"
+                    text="Nice project"
+                  />
+                  <Comment
+                    createdAt="1d ago"
+                    username="asaprogrammer_"
+                    profilePic="/profilepic1.png"
+                    text="Nice project"
+                  />
+                  <Comment
+                    createdAt="1d ago"
+                    username="asaprogrammer_"
+                    profilePic="/profilepic1.png"
+                    text="Nice project"
+                  />
+                  <Comment
+                    createdAt="1d ago"
+                    username="asaprogrammer_"
+                    profilePic="/profilepic1.png"
+                    text="Nice project"
+                  />
+                  <Comment
+                    createdAt="1d ago"
+                    username="asaprogrammer_"
+                    profilePic="/profilepic1.png"
+                    text="Nice project"
+                  />
+                  <Comment
+                    createdAt="1d ago"
+                    username="asaprogrammer_"
+                    profilePic="/profilepic1.png"
+                    text="Nice project"
+                  />
+                  <Comment
+                    createdAt="1d ago"
+                    username="asaprogrammer_"
+                    profilePic="/profilepic1.png"
+                    text="Nice project"
+                  />
+                  <Comment
+                    createdAt="1d ago"
+                    username="asaprogrammer_"
+                    profilePic="/profilepic1.png"
+                    text="Nice project"
                   />
                 </VStack>
+
+                <PostFooter isProfilePage={false} />
               </Flex>
             </Flex>
           </ModalBody>
